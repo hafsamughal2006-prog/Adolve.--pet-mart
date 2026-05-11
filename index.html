@@ -225,14 +225,35 @@
             position: relative;
             overflow: hidden;
         }
-             .adopt-grid 
-                {
-                 display: grid;
-                   grid-template-columns: repeat(4, 1fr);
-                    gap: 2rem;
-                   max-width: 1200px;
-                    margin: 0 auto;
-                }
+            .adopt-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .adopt-grid {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 1.5rem;
+        padding-bottom: 1.5rem;
+        scrollbar-width: none; 
+    }
+
+    .adopt-grid::-webkit-scrollbar {
+        display: none; 
+    }
+
+    .adopt-card {
+        flex: 0 0 80vw;
+        scroll-snap-align: center;
+    }
+}
      
 
         .adopt-badge {
